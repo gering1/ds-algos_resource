@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Structures</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+ <!--header-->
+ <div class="sidenav">
+     <div class="title">
+     <h3>Python Data Structures and  <br>Common Interview Algorithms</h3>
+    
+    </div>
+    <p class="subtitle">Data Stuctures</p>
+  <nav class = "data-struct-nav">
+    
+      <a class = "navlink"href="#list">List</a>
+      <hr class = "menu-divide" />
+      <a class = "navlink" href="#queue">Queue</a>
+      <hr class="menu-divide"/>
+      <a class = "navlink" href="#stack">Stack</a>
+      <hr class="menu-divide" />
+      <a class = "navlink" href="#ll">Linked List</a>
+      <hr class="menu-divide" />
+      <a class = "navlink" href="#dict">Dictionary</a>
+      <hr class="menu-divide">
+      <a class = "navlink" href="#bt">Binary Search Tree</a>
+      <hr class="menu-divide">
+      <a class = "navlink" href="#set">Set</a>
+      <hr class="menu-divide">
+      <a class = "navlink" href="#heap">Heap</a>
+  </nav>
+  <p class="subtitle">Algorithms/Interview Questions</p>
+  <nav class = "algo-nav">
+    <a class = "navlink"href="#bfs">Breadth-First-Search (BFS)</a>
+    <hr class = "menu-divide" />
+    <a class = "navlink" href="#dfs">Depth-First-Search (DFS)</a>
+    <hr class="menu-divide"/>
+    <a class = "navlink" href="#binary-search">Binary Search</a>
+  </nav>
+</div>
+
+
+<!--List-->
+<div class="content">
+    <section  class = "data-struct" id = "list">
+        <div class = "container">
+            <h2 class= "data-title">List</h2>
+            <div class = "box"> <p class = "code-block">
+                >>>my_list = [1,2,3,4] <br>
+                >>>my_list.append('wow') <br>
+                >>> my_list <br>
+                [1,2,3,4,"wow"] <br>
+                >>> my_list.insert(0,"at start!") <br>
+                >>> my_list <br>
+                ["at start!",1,2,3,4,wow]
+            
+            </p>
+                <p>In Python, a list is a group of elements. Compared to arrays, lists are more useful when you need to store different types with dynamic sizing. </p>
+                <div>
+                <p>Time Complexities:</p>
+                <ul style="list-style-type:circle">
+                    <li>Access: O(1)</li>
+                    <li>Search: O(n)</li>
+                    <li>Insertion/Deletion: O(n)</li>
+                    
+                </ul>
+            </div>
+                    
+            </div>
+        </div>
+    </section>
+
+ 
+    <!--Queue-->
+    <section  class = "data-struct" id = "queue">
+        <div class = "container">
+            <h2 class= "data-title">Queue</h2>
+            <div class = "box">
+                <p class = "code-block">from collections import deque <br>
+                    >>>queue = deque(["apple","banana","orange"] <br>
+                    >>> queue.popleft() <br>
+                    "apple" <br>
+                    >>> queue <br>
+                    ["banana","orange"]
+                   
+                </p>
+                <p>
+            A queue is an abstract data type that folllows a <strong>First In First Out (FIFO) structure.</strong> One way to think of a queue is as a line: the first person in 
+            line gets access to whatever they're in line for before anyone else.
+        </p>
+            <div >
+                <p>Time Complexities:</p>
+                <ul style="list-style-type:circle">
+                    <li>Access: O(n)</li>
+                    <li>Search: O(n)</li>
+                    <li>Insertion/Deletion: O(1)</li>
+                    <strong>Note: use .popleft() to pop off the first element with O(1) time</strong>
+                </ul>
+                
+            </div>  
+            </div>   
+        </div>
+    </section>
+
+
+    <!--Stack-->
+    <section  class = "data-struct" id = "stack">
+        <div class = "container">   
+            <h2 class = "data-title">Stack</h2>
+            <div class = "box">
+                <p class = "code-block">
+                    >>>stack = ["apple","orange","banana"] <br>
+                    >>> stack.pop() <br>
+                    "banana" <br>
+                    >>> stack <br>
+                    ["apple","orange"]
+                </p>
+                <p>
+            A stack is an abstract data type that follows a <strong>Last In First Out (LIFO) structure.</strong> One way to think of a stack is as stack of plates where you take the 
+            plate off the <strong>top</strong> of the stack.
+        </p>
+                <div>
+                    <p>Time Complexities:</p>
+                    <ul style="list-style-type:circle">
+                        <li>Access: O(n)</li>
+                        <li>Search: O(n)</li>
+                        <li>Insertion/Deletion: O(1)</li>
+                        
+                    </ul>
+                </div> 
+            </div>
+           
+            
+        </div>   
+    </section>
+
+
+    <!--Linked List-->
+    <section  class = "data-struct" id = "ll">
+        <div class = "container">   
+            <h2 class = "data-title">Linked List</h2>
+            <div class = "box">
+                <p class = "code-block" style =  "white-space: pre">class Node:
+    def __init__(self,val):
+        self.val = val
+        self.next = None
+>>> node1 = Node(1)
+>>> node2 = Node(2)
+>>> node1.next = node2
+<bold style = "text-decoration: underline; font-size: 18px;">Traverse Linked List</bold>
+def traverse(root): 
+    curr = root <i class="comment">#It is common to use a pointer set to root to traverse the linked list in case you need to return the whole list (return root)</i>
+    while curr: 
+        print(curr.val) 
+        curr = curr.next
+                </p>
+                <p>
+                A linked list is a linear data structure where each node has a value and a pointer to the next node. This allows for efficient removal and insertion, but 
+                accessing a value is slower. 
+        </p>
+                <div>
+                    <p>Time Complexities:</p>
+                    <ul style="list-style-type:circle">
+                        <li>Access: O(n)</li>
+                        <li>Search: O(n)</li>
+                        <li>Insertion/Deletion: O(1)</li>
+                        
+                    </ul>
+                </div> 
+            </div>
+           
+            
+        </div>   
+    </section>
+
+
+    <!--Dictionary-->
+    <section  class = "data-struct"id = "dict">
+        <div class = "container">
+            <h2 class= "data-title">Dictionary</h2>
+            <div class = "box">
+               <p class = "code-block"> 
+                >>>my_dict = {"hi":1, 5:"ok"} <br>
+                >>> my_dict["hi"]<br> 
+                1 <br>  
+                >>> my_dict["john"] = "smith" <br>
+                >>> my_dict <br>
+                {"hi":1, 5:"ok","john":"smith"} <br>
+                >>> del my_dict["hi"] <br>
+                >>> my_dict <br>
+                {5:"ok","john":"smith"}
+            </p>
+               <p>A dictionary is a data stucture that uses key:value pairs. Keys must be unique.   </p> 
+                <div>
+                    <p>Time Complexities:</p>
+                    <ul style="list-style-type:circle">
+                        
+                        <li>Search: O(1)</li>
+                        <li>Insertion/Deletion: O(1)</li>
+                    </ul>
+                   <p class = "note"> <strong>Note: dictionaries were unordered in previous python versions, but have been ordered since version 3.7</strong></p>
+
+                </div> 
+            </div>   
+        </div>
+    </section>
+
+    <!--Binary Search Tree-->
+    <section  class = "data-struct" id = "bt">
+        <div class = "container">
+            <h2 class= "data-title">Binary Search Tree</h2>   
+            <div class = "box">
+           
+            <p class = "code-block" style =  "white-space: pre">class TreeNode:
+    def __init__(self,val):
+        self.val = val
+        self.left = None
+        self.right = None</p>
+            <p>A binary tree is a type of tree that has a maximum of two children. A <strong>binary search tree</strong> is a special type of binary tree which constrains the left child to be less than its parent, 
+            and the right child greater than its parent. Breadth-First-Search, Depth-First-Search, Preorder Traersal, Inorder Traversal and Postorder Traversal are algorithms that are often used when given a problem involving a binary tree.</p>
+            <p>Time Complexities:</p>
+            <ul style="list-style-type:circle">
+                <li>Access: O(log(n))</li>
+                <li>Search: O(log(n))</li>
+                <li>Insertion/Deletion: O(log(n))</li>
+            </ul>
+            </div>
+            
+    </section>
+
+    
+    <!--Set-->
+    <section  class = "data-struct" id = "set">
+        <div class = "container">
+            <h2 class= "data-title">Set</h2>   
+            <div class = "box">
+           
+            <p class = "code-block" style =  "white-space: pre">>>> filled_set = {'hi','wow','ok'}
+empty_set = set() <i>#must use this format when creating an empty set.</i>
+>>> set1 = {'a','b','c'}
+>>> set2 = {'c','d','e'}
+>>> set1 - set2 <i>#letters in set1 not in set2</i>
+{'a','b'}
+>>> set1 & set2 <i>#letters in set1 and set2</i>
+{'c'}
+>>> set1 | set2 <i>#letters in set1 or set2 or both</i>
+{'a','b','c','d','e'}
+>>> set1 ^ set2 <i># XOR: letters in set1 or set2 but not both</i>
+{'a','b','d','e'}
+</p>
+            <p>A set is an unordered collection that does not allow duplicates. Sets are useful for testing if duplicates exist. Also, sets can be used
+                for O(1) lookup similar to a dictionary, using the 'in' keyword. Sets are also used to check intersection, union and difference between other sets.
+            </p>
+            <p>Time Complexities:</p>
+            <ul style="list-style-type:circle">
+                <li>Check if in set : O(1)</li>
+                <li>Insertion/Deletion: O(1)</li>
+                <li>Intersection: O(min(len(set1), len(set2)) <i>#use '&' symbol</i></li>
+                <li>Difference:  O(len(set)) #use '-' symbol</li>
+                <li>Union: O(len(s)+len(t)) #use '|' symbol</li>
+            </ul>
+            </div>
+            
+    </section>
+
+    <!--Heap-->
+    <section  class = "data-struct" id = "heap">
+        <div class = "container">
+            <h2 class= "data-title">Heap</h2>   
+            <div class = "box">
+            
+            <p class = "code-block" style =  "white-space: pre">from collections import heapq
+nums = [8,4,2,5,1]
+<bold style = "text-decoration: underline; font-size: 18px;">Find Kth Largest</bold>
+heap = nums[:k]
+heapq.heapify(heap) <i>#O(n)</i>
+for i in nums[k:]:
+    heapq.heappushpop(heap,i)
+return heapq.heappop(heap)
+<bold style = "text-decoration: underline; font-size: 18px;">Find Kth Smallest</bold>
+nums = [-i for i in nums] <i>#need negative values for <bold>max heap</bold></i>
+heap = nums[:k]
+heapq.heapify(heap) <i>#O(n)</i>
+for i in nums[k:]:
+    heapq.heappushpop(heap,-i)
+return heapq.heappop(heap)<p>A heap is a type of tree structure that constrains a specific parent-child relationship. For a <bold>Min Heap,</bold> each parent value is <bold>less than or equal to</bold>
+            its child. For a <bold>Max heap,</bold> each parent value is <bold>greater than or equal to</bold> its child.</p> This library only has min heaps built-in. In order to create a max heap, you should
+            make every number a negative value then convert the collection into a heap with heapify(my_list). Heaps are useful when you want to keep track of 
+            the largest/smallest element(s). This module is meant to represent a priority queue. Note that the heap is implemented as a binary heap.</p>
+
+            <p>Time Complexities:</p>
+            <ul style="list-style-type:circle">
+                <li>Heapify O(n)</li>
+                <li>Push/Pop O(log(n))</li>
+                <li>find kth largest/smallest: O(n log(n-k)) </li>
+               
+                
+            </ul>
+            </div>
+           
+    </section>
+
+    <!--BFS-->
+    <section  class = "data-struct" id = "bfs">
+        <div class = "container">
+            <h2 class= "data-title">Breadth-First-Search</h2>   
+            <div class = "box">
+           
+            <p class = "code-block" style =  "white-space: pre">import collections
+def bfs(root):
+    queue = collections.deque([root])
+    while queue:
+        node = queue.popleft() <i>#pop off <bold>front</bold></i>
+        print(node.val)
+        if node.left: 
+                queue.append(node.left)
+        if node.right: 
+                queue.append(node.right)</p>
+            <p>Breadth-First-Search is a graph and tree traversal algorithm. Starting at the root, it visits each node at the current depth before going on to the next depth. It uses a <strong>queue</strong>.</p>
+            </div>
+            
+    </section>
+
+    <!--DFS-->
+    <section  class = "data-struct" id = "dfs">
+        <div class = "container">
+            <h2 class= "data-title">Depth-First-Search</h2>   
+            <div class = "box">
+           
+            <p class = "code-block" style =  "white-space: pre">def bfs(root):
+    stack = []
+    while stack:
+        node = stack.pop() <i>#pop off <bold>end</bold></i>
+        print(node.val)
+        if node.left: 
+                stack.append(node.left)
+        if node.right: 
+                stack.append(node.right)</p>
+            <p>Depth-First-Search is a graph and tree traversal algorithm. Starting at the root, it goes as far as possible on each. It uses a <strong>stack</strong>.</p>
+            </div>
+            
+    </section>
+    
+    <!--Binary Search-->
+    <section  class = "data-struct" id = "binary-search">
+        <div class = "container">
+            <h2 class= "data-title">Binary Search</h2>   
+            <div class = "box">
+           
+            <p class = "code-block" style =  "white-space: pre">def binary_search(arr,target):
+    l,r = 0, len(arr) - 1   <i class = "comment">#these are the boundaries used to calculate the middle element... does not always have to be the entire array</i>
+        while l < r:  <i class = "comment">#if this loop finishes, you know that the two pointers will point to the same element</i>
+            middle = l + ((r - l + 1) / 2) <i class = "comment"> #this avoids overflow... note that it would be l + ((r - l) / 2) if r was being set to mid in the code below (avoids infinite loop)</i>
+            if target == arr[middle]: 
+                return middle 
+            if target < arr[middle]: 
+                r = middle - 1 <i class="comment">#exclude middle</i>
+            else:
+                l = middle
+            return l if nums[l] == target else -1 <i class="comment">#returns index if last element is the target, if not returns -1 (no target found) </i>
+            <p>Binary Search is a search algorithm that is used with sorted arrays. It finds the middle element, then compares that to the target element. If the target element is not equal to the middle, then you can eliminate half of the array after finding out which half the target does not lie in.</p>
+            </div>
+            
+    </section>
+<!--
+    <section  class = "data-struct" >
+        <div class = "container">
+            <h2>Two Sum</h2>
+            <div class = "box">
+           
+            <img class = "code-snippets" height = 300px src = 'img/two sum.png'>
+            </div>
+
+           
+        </div> 
+            </div>
+        </div>
+    </section>
+
+   
+    <section  class = "data-struct" >
+        <div class = "container">
+            <h2>Depth First Search, Breadth First Search</h2>
+            <div class = "box">
+           
+         <p>The code with DFS and BFS is very similar, the main difference being that DFS uses a <strong>stack,</strong> while BFS uses a <strong>queue.</strong> This
+        means that stack pops off the end, while queue pops off the front. To retain retain O(1) for popping off the queue, collections.deque and popleft() should be used.</p>
+         <img class = "code-snippets" height = 300px src = 'img/dfs.bfs.png'>
+  
+            
+    </section>
+     -->
+  
+
+
+    <footer>
+
+    </footer>
+</div>
+    
+</body>
+</html>
