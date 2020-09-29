@@ -12,9 +12,30 @@ body {
     padding: 0;
     margin: 0;  
    color:  black;
-   
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
 }
 
+/* width */
+body::-webkit-scrollbar {
+    width: 11px;
+    height: 50px;
+  }
+  
+  /* Track */
+  body::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  body::-webkit-scrollbar-thumb {
+    background: rgb(186, 186, 186);
+  }
+  
+  /* Handle on hover */
+  body::-webkit-scrollbar-thumb:hover {
+    background: rgb(206, 206, 206);
+  }
 
 
 
@@ -22,8 +43,13 @@ body {
 
 /*------------ nav ------------*/
 
-.sidenav {
+.sidenav::-webkit-scrollbar {
+    display: none;
+  }
 
+.sidenav {
+   
+    
     height:100%;
     width: 300px;
     position: fixed;
@@ -32,7 +58,7 @@ body {
     left: 0;
     overflow-x: hidden;
     color: #b1b0b0;
-    
+    scrollbar-base-color: black;
     background: #222629  url('../images/overlay.png');
     
     }
@@ -40,7 +66,7 @@ body {
 .navlink {
     margin-left: 35px;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 15px;
     color: #b1b0b0;
     display: block;
     }
@@ -68,13 +94,14 @@ body {
    
 }
 .data-struct-nav {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 .subtitle {
     display: flex;
     justify-content: center;
     text-decoration: underline;
-    font-size: 18px;
+
+    font-size: 17px;
     margin-bottom:15px;
     margin-top: 10px;
 }
@@ -96,12 +123,14 @@ body {
 }
 
 .data-title { 
+    font-weight: 500;
     display: flex;
     align-content: center;
     justify-content: center;
     margin-bottom: 5px;
     color:black;
-    font-family: Optima,sans-serif;
+    font-size: 26px;
+    font-family: 'Times New Roman', Times, serif
 }
 
 .container {
@@ -110,18 +139,37 @@ body {
     overflow: hidden;
    
 }
-.code-block {
+   .code-block {
     background: #222629  url('../images/overlay.png');
-    font-family: monospace;
     color: rgb(43, 230, 43);
     padding: 15px;
     border-radius: 5px;
     margin: 20px 5px;
     border: 1px solid black;
     overflow:auto;
-    
-    
 }
+
+.code-block::-webkit-scrollbar {
+    width: 11px;
+    height: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #454d51  url('../images/overlay.png');
+  }
+  
+  /* Handle */
+  .code-block::-webkit-scrollbar-thumb {
+    background: #2a2f32  url('../images/overlay.png');
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(206, 206, 206);
+  }
+
+
 .note {
     padding-bottom: 5px;
 }

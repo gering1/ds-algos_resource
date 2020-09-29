@@ -40,6 +40,10 @@
     <a class = "navlink" href="#dfs">Depth-First-Search (DFS)</a>
     <hr class="menu-divide"/>
     <a class = "navlink" href="#binary-search">Binary Search</a>
+    <hr class="menu-divide"/>
+    <a class = "navlink" href="#reverse-ll">Reverse Linked List</a>
+    <hr class="menu-divide"/>
+    <a class = "navlink" href="#longest-sub">Longest Substring Without Repeating Characters  </a>
   </nav>
 </div>
 
@@ -151,7 +155,7 @@
 >>> node1 = Node(1)
 >>> node2 = Node(2)
 >>> node1.next = node2
-<bold style = "text-decoration: underline; font-size: 18px;">Traverse Linked List</bold>
+<bold style = "color: white;text-decoration: underline; font-size: 18px;">Traverse Linked List</bold>
 def traverse(root): 
     curr = root <i class="comment">#It is common to use a pointer set to root to traverse the linked list in case you need to return the whole list (return root)</i>
     while curr: 
@@ -240,16 +244,16 @@ def traverse(root):
             <div class = "box">
            
             <p class = "code-block" style =  "white-space: pre">>>> filled_set = {'hi','wow','ok'}
-empty_set = set() <i>#must use this format when creating an empty set.</i>
+empty_set = set() <i class="comment">#must use this format when creating an empty set.</i>
 >>> set1 = {'a','b','c'}
 >>> set2 = {'c','d','e'}
->>> set1 - set2 <i>#letters in set1 not in set2</i>
+>>> set1 - set2 <i class="comment">#letters in set1 not in set2</i>
 {'a','b'}
->>> set1 & set2 <i>#letters in set1 and set2</i>
+>>> set1 & set2 <i class="comment">#letters in set1 and set2</i>
 {'c'}
->>> set1 | set2 <i>#letters in set1 or set2 or both</i>
+>>> set1 | set2 <i class="comment">#letters in set1 or set2 or both</i>
 {'a','b','c','d','e'}
->>> set1 ^ set2 <i># XOR: letters in set1 or set2 but not both</i>
+>>> set1 ^ set2 <i class="comment"># XOR: letters in set1 or set2 but not both</i>
 {'a','b','d','e'}
 </p>
             <p>A set is an unordered collection that does not allow duplicates. Sets are useful for testing if duplicates exist. Also, sets can be used
@@ -275,16 +279,16 @@ empty_set = set() <i>#must use this format when creating an empty set.</i>
             
             <p class = "code-block" style =  "white-space: pre">from collections import heapq
 nums = [8,4,2,5,1]
-<bold style = "text-decoration: underline; font-size: 18px;">Find Kth Largest</bold>
+<bold style = "color: white;text-decoration: underline; font-size: 18px;">Find Kth Largest</bold>
 heap = nums[:k]
 heapq.heapify(heap) <i>#O(n)</i>
 for i in nums[k:]:
     heapq.heappushpop(heap,i)
 return heapq.heappop(heap)
-<bold style = "text-decoration: underline; font-size: 18px;">Find Kth Smallest</bold>
-nums = [-i for i in nums] <i>#need negative values for <bold>max heap</bold></i>
+<bold style = "color: white;text-decoration: underline; font-size: 18px;">Find Kth Smallest</bold>
+nums = [-i for i in nums] <i class = "comment">#need negative values for <bold>max heap</bold></i>
 heap = nums[:k]
-heapq.heapify(heap) <i>#O(n)</i>
+heapq.heapify(heap) <i class = "comment">#O(n)</i>
 for i in nums[k:]:
     heapq.heappushpop(heap,-i)
 return heapq.heappop(heap)<p>A heap is a type of tree structure that constrains a specific parent-child relationship. For a <bold>Min Heap,</bold> each parent value is <bold>less than or equal to</bold>
@@ -314,7 +318,7 @@ return heapq.heappop(heap)<p>A heap is a type of tree structure that constrains 
 def bfs(root):
     queue = collections.deque([root])
     while queue:
-        node = queue.popleft() <i>#pop off <bold>front</bold></i>
+        node = queue.popleft() <i class = "comment">#pop off <bold>front</bold></i>
         print(node.val)
         if node.left: 
                 queue.append(node.left)
@@ -334,7 +338,7 @@ def bfs(root):
             <p class = "code-block" style =  "white-space: pre">def bfs(root):
     stack = []
     while stack:
-        node = stack.pop() <i>#pop off <bold>end</bold></i>
+        node = stack.pop() <i class = "comment">#pop off <bold>end</bold></i>
         print(node.val)
         if node.left: 
                 stack.append(node.left)
@@ -364,8 +368,83 @@ def bfs(root):
             return l if nums[l] == target else -1 <i class="comment">#returns index if last element is the target, if not returns -1 (no target found) </i>
             <p>Binary Search is a search algorithm that is used with sorted arrays. It finds the middle element, then compares that to the target element. If the target element is not equal to the middle, then you can eliminate half of the array after finding out which half the target does not lie in.</p>
             </div>
-            
+             
     </section>
+
+      <!--Reverse Linked List-->
+      <section  class = "data-struct" id = "reverse-ll">
+        <div class = "container">
+            <h2 class= "data-title">Reverse a Linked List</h2>   
+            <div class = "box">
+           
+            <p class = "code-block" style =  "white-space: pre">def reverse_ll(head):
+    curr = head
+    prev = None
+    while curr:
+        temp = curr.next
+        curr.next = prev
+        prev = curr
+        curr = temp
+    return prev
+<p>A straightfoward solution to this problem is to create two pointers, previous and current. The idea is to point the current node backwards, then traverse to the next node. In order to do this,
+a temporary value is needed to store the next node that will be iterated to before pointing backwards. Once the current reaches a null value, the previous pointer will be at the start of the reversed linked list.
+</p>
+</div>
+
+    </section>
+
+      <!--Two Sum-->
+      <section  class = "data-struct" id = "two-sum">
+        <div class = "container">
+            <h2 class= "data-title">Two Sum</h2>   
+            <div class = "box">
+            <a href = "https://leetcode.com/problems/two-sum/" target = "_blank">Link To Problem</a>
+            <p class = "code-block" style =  "white-space: pre">def two_sum(target,nums):   
+indexes = {}
+for index, i in enumerate(nums):
+    if target-i in indexes:
+        return [index,indexes[target-i]]
+    indexes[i] = index
+return -1
+<p>One way to solve this problem is using a dictionary storing each value and index in the list of numbers. Iterating through the list, the first thing to do is check if there exists a number in the dictionary that is the difference between
+    the target and current number. If there is, then you know the two indexes that add to the target. If not, the current number and index should be added to the dictionary.
+
+</p>
+</div>
+
+    </section>
+
+    
+</section>
+
+<!--Longest Substring With no Repeats-->
+<section  class = "data-struct" id = "longest-sub">
+  <div class = "container">
+      <h2 class= "data-title">Longest Substring Without Repeating Characters</h2>   
+      <div class = "box">
+      <a href = "https://leetcode.com/problems/longest-substring-without-repeating-characters/" target = "_blank">Link To Problem</a>
+      <p class = "code-block" style =  "white-space: pre">def longest_substring(s):   
+lookup = {}
+maxL = 0
+startLoc = 0
+for ind,i in enumerate(s):
+    if i in lookup and startLoc <= lookup[i]:
+        startLoc = lookup[i]+1
+    else:
+        maxL = max(maxL,ind-startLoc+1)
+    lookup[i] = ind
+return maxL
+<p>This problem can be solved using the sliding window technique. In order to move the window once we reach a duplicate letter, we can use a dictionary to keep track of where the last seen index of each letter is. This allows us to move
+    the starting location to the the letter right after the last seen duplicate. We check if the starting location is less than the index of the last seen index of that letter because we don't want to 
+    count the repeating letters as duplicates if they are not both in the sliding window.box
+
+</p>
+</div>
+
+</section>
+
+
+-->
 <!--
     <section  class = "data-struct" >
         <div class = "container">
