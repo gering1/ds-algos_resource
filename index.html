@@ -145,10 +145,13 @@
 
     <!--Linked List-->
     <section  class = "data-struct" id = "ll">
-        <div class = "container">   
+        
+      
+       
+        <div class = "container">    
             <h2 class = "data-title">Linked List</h2>
             <div class = "box">
-                <p class = "code-block" style =  "white-space: pre">class Node:
+                <p id = 'll-snippet' class = "code-block" style =  "white-space: pre">class Node:
     def __init__(self,val):
         self.val = val
         self.next = None
@@ -160,12 +163,10 @@ def traverse(root):
     curr = root <i class="comment">#It is common to use a pointer set to root to traverse the linked list in case you need to return the whole list (return root)</i>
     while curr: 
         print(curr.val) 
-        curr = curr.next
-                </p>
-                <p>
+        curr = curr.next</p>
+                <p  >
                 A linked list is a linear data structure where each node has a value and a pointer to the next node. This allows for efficient removal and insertion, but 
-                accessing a value is slower. 
-        </p>
+                accessing a value is slower.</p>
                 <div>
                     <p>Time Complexities:</p>
                     <ul style="list-style-type:circle">
@@ -372,7 +373,7 @@ def bfs(root):
     </section>
 
       <!--Reverse Linked List-->
-      <section  class = "data-struct" id = "reverse-ll">
+      <section class = "data-struct" id = reverse-ll">
         <div class = "container">
             <h2 class= "data-title">Reverse a Linked List</h2>   
             <div class = "box">
@@ -390,15 +391,16 @@ def bfs(root):
 a temporary value is needed to store the next node that will be iterated to before pointing backwards. Once the current reaches a null value, the previous pointer will be at the start of the reversed linked list.
 </p>
 </div>
-
     </section>
 
       <!--Two Sum-->
-      <section  class = "data-struct" id = "two-sum">
+      <section  class = "data-struct" id = "two-sum"> 
         <div class = "container">
-            <h2 class= "data-title">Two Sum</h2>   
+            <div class = "title-container">
+            <h2 class= "data-title">Two Sum <a class = "problem-link" href = "https://leetcode.com/problems/two-sum/" target = "_blank">Link To Problem</a></h2>  
+        </div> 
             <div class = "box">
-            <a href = "https://leetcode.com/problems/two-sum/" target = "_blank">Link To Problem</a>
+           
             <p class = "code-block" style =  "white-space: pre">def two_sum(target,nums):   
 indexes = {}
 for index, i in enumerate(nums):
@@ -420,9 +422,9 @@ return -1
 <!--Longest Substring With no Repeats-->
 <section  class = "data-struct" id = "longest-sub">
   <div class = "container">
-      <h2 class= "data-title">Longest Substring Without Repeating Characters</h2>   
+      <h2 class= "data-title">Longest Substring Without Repeating Characters<a class = "problem-link" href = "https://leetcode.com/problems/longest-substring-without-repeating-characters/" target = "_blank">Link To Problem</a></h2>   
       <div class = "box">
-      <a href = "https://leetcode.com/problems/longest-substring-without-repeating-characters/" target = "_blank">Link To Problem</a>
+     
       <p class = "code-block" style =  "white-space: pre">def longest_substring(s):   
 lookup = {}
 maxL = 0
@@ -444,7 +446,7 @@ return maxL
 </section>
 
 
--->
+
 <!--
     <section  class = "data-struct" >
         <div class = "container">
