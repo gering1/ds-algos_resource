@@ -112,7 +112,7 @@ body::-webkit-scrollbar {
 .box {
     min-height: 200px;
     padding: 2px 20px;
-    /* background-color: rgb(235, 235, 235);*/
+  
     background-color: rgb(255, 255, 255);
     border: 1px solid rgb(204, 204, 204) ;
     margin-bottom: 18px;
@@ -122,28 +122,38 @@ body::-webkit-scrollbar {
     margin-left: 300px  ;
 }
 
+.l-logo {
+   
+    height: 37px;
+   
+}
 .problem-link {
-    text-decoration: none;
-    margin: 0px 10px;
-    border: 1px solid rgb(204, 204, 204);
-    background-color:rgb(250, 250, 250);
-    border-radius: 3px;
-    padding: 0px 5px;
-    color:black;
+    padding: 0px 11px;
+    height: 40px;
+    font-size: 18px;
+    position: absolute;
+    right:80px;
     
+    
+    display:flex;
+    align-items: center;
+    border-radius: 5px;
+    background: #222629  url('../images/overlay.png');
+    text-decoration: none;
+    color: #f0f0f0;
+}
 
+.problem-link:hover {
+    background:  #3d4348  url('../images/overlay.png');
 }
 .data-title { 
     font-weight: 500;
     display: flex;
-    align-content: center;
-    align-items: center;
     justify-content: center;
     margin-bottom: 5px;
     color:black;
     font-size: 26px;
     font-family: 'Times New Roman', Times, serif;
-    
     
 }
 
